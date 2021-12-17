@@ -6,6 +6,7 @@
 
     $toReduct = $_GET['reduct'];
     
+    $reductedParagraph = str_replace($toReduct, '***', $paragraph);
 ?>
 
 <!DOCTYPE html>
@@ -17,9 +18,12 @@
     <title>php-badwords</title>
 </head>
 <body>
-    <h2>Paragrafo: <i><?php echo str_replace($toReduct, '***', $paragraph) ?></i> </h2>
+    <h2>Paragrafo: <i><?php echo  $paragraph ?></i> </h2>
     <h2>Lunghezza in caratteri: <i><?php echo strlen($paragraph)?></i></h2>
     <h2>Numero di parole: <i><?php echo str_word_count($paragraph)?></i></h2>
+    <h2>Paragrafo censurato: <i><?php echo  $reductedParagraph ?></i> </h2>
+    <h2>Lunghezza in caratteri: <i><?php echo strlen($reductedParagraph)?></i></h2>
+    <h2>Numero di parole: <i><?php echo str_word_count($reductedParagraph)?></i></h2>
 
 </body>
 </html>
